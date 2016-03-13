@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
   before_action :is_super_admin, only: [:index, :destroy, :new, :create]
 
   def index
-    @admins = Admin.paginate(page: params[:page], per_page: "#{Settings.per_page}")
+    @admins = Admin.paginate(page: params[:page], per_page: 5)
   end
 
   def show
