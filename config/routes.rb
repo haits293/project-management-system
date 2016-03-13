@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root "home#index"
   get "login" => "sessions#new"
   get "admin-login" => "admin_sessions#new"
+  get "signup" => "users#new"
 end
