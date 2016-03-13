@@ -1,2 +1,26 @@
-%h1 Users#new
-%p Find me in app/views/users/new.html.erb
+.container
+  .col-md-4.col-md-offset-4
+    .panel.panel-default
+      .panel-heading
+        %h1 Sign up
+      .panel-body
+        = form_for @user do |f|
+          = render "shared/error_messages", object: f.object
+          .form-group
+            = f.label :username
+            %br
+            = f.text_field  :username, class: "form-control"
+          .form-group
+            = f.label :email
+            %br
+            = f.text_field :email, class: "form-control"
+          .form-group
+            = f.label :password
+            %br
+            = f.password_field :password, class: "form-control"
+          .form-group
+            = f.label :password_confirmation
+            %br
+            = f.password_field :password_confirmation, class: "form-control"
+          .button
+            = f.submit "Sign Up", class: "btn btn-primary"
